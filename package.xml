@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package format="3">
+
+  <name>lidar_camera_fusion</name>
+  <version>0.0.1</version>
+
+  <description>
+    LiDAR-camera depth fusion for ROS 2 Humble.
+  </description>
+
+  <maintainer email="cj-007@todo.todo">cj-007</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_sensor_msgs</depend>
+
+  <exec_depend>message_filters</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>sensor_msgs_py</exec_depend>
+
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+
+</package>

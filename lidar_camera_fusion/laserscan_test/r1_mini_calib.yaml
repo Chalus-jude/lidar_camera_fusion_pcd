@@ -1,0 +1,19 @@
+#R1 ugv params
+# Built directly from your tf2_echo and camera_info output -- see chat.
+# Color camera (D=0 confirms /camera/camera/color/image_raw is already rectified).
+camera_matrix:
+  - [910.044921875, 0.0, 653.2933349609375]
+  - [0.0, 909.7998046875, 378.9169616699219]
+  - [0.0, 0.0, 1.0]
+
+dist_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+
+# convention: maps a point in the laser scan frame into the camera frame)
+T_cam_lidar:
+  - [-1.000, 0.015, -0.001, 0.015]
+  - [0.001, 0.001, -1.0, -0.078]
+  - [-0.015, -1.0, -0.001, -0.048]
+  - [0.0, 0.0, 0.0, 1.0]
+
+resolution_wh: [1280, 720]

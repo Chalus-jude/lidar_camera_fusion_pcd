@@ -1,0 +1,16 @@
+
+# Forces explicit QoS for the two topics the fusion node subscribes to, so
+# playback doesn't depend on whatever default rosbag2 falls back to when a
+# bag's metadata has no offered_qos_profiles recorded for a topic.
+
+/ouster/points:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/camera/left/image_raw/compressed:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10

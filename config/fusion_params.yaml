@@ -1,0 +1,38 @@
+lidar_camera_fusion_node:
+  ros__parameters:
+    lidar_topic: /ouster/points
+    image_topic: /zedx_front/zed_node/rgb/color/rect/image/compressed
+
+    calibration_file: ""
+
+    # it is already rectifie so keeping this true and supply 'projection_matrix'
+
+    image_is_rectified: true
+
+    # ApproximateTimeSynchronizer tuning
+    queue_size: 10 # maximum allowable limit to wait until it recieves data from another topic
+    slop: 0.05 # timedelay between timestamps
+# in meters
+    min_range: 0.3
+    max_range: 60.0
+
+    # the overestimation bias by the fused image over the zed depth image
+    #depth_bias_m: -1.333
+
+#published output topics
+    publish_sparse_depth: true
+    max_fill_radius_px: 15
+    publish_dense_depth: true
+
+    publish_overlay: true
+    publish_colorized_cloud: false   #colourized pcd but computational expensive
+
+
+    qos_reliability: reliable
+
+    #joint bilateral filter with NN-depth filling
+    bilateral_d: 9
+    bilateral_sigma_color: 25.0
+    bilateral_sigma_space: 9.0
+
+    log_every_n_frames: 30
